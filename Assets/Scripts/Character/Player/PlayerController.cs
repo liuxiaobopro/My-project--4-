@@ -8,7 +8,7 @@ namespace Character.Player
         [Tooltip("玩家移动速度")] [SerializeField] private float moveSpeed = 5f;
 
         private PlayerControls playerControls; // 玩家控制器
-        private Vector2 movementInput; // 玩家移动输入
+        private Vector2 movement; // 玩家移动输入
         private Rigidbody2D rb; // 玩家刚体
 
         protected override void Awake()
@@ -31,7 +31,7 @@ namespace Character.Player
 
         private void Update()
         {
-            playerInput();
+            PlayerInput();
         }
 
         private void FixedUpdate()
@@ -42,10 +42,10 @@ namespace Character.Player
         /// <summary>
         /// 玩家移动
         /// </summary>
-        private void playerInput()
+        private void PlayerInput()
         {
             // 获取玩家输入
-            movementInput = playerControls.Movement.Move.ReadValue<Vector2>();
+            movement = playerControls.Movement.Move.ReadValue<Vector2>(); // 获取玩家移动输入
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Character.Player
         /// </summary>
         private void Move()
         {
-            rb.MovePosition(rb.position + movementInput * (moveSpeed * Time.fixedDeltaTime));
+            rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime)); // 移动玩家
         }
     }
 }
