@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5641954447838687791}
   - component: {fileID: 7013180765001680227}
   m_Layer: 0
-  m_Name: smallburg_spring_terrain
+  m_Name: SmallburgSpringTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
